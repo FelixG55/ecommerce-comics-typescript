@@ -1,0 +1,17 @@
+ .image-bg {
+  height: 110px;
+  width: 390px;
+  background-image: url("headerBanner.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@media (max-width: 991px) {
+  .image-bg {
+    background-image: none; /* Oculta la imagen cuando el ancho de la ventana sea menor o igual a 768px */
+  }
+  .image-rigth {
+    display: none;
+  }
+}
