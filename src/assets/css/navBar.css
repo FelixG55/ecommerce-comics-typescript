@@ -11,7 +11,7 @@
   .image-bg {
     background-image: none; /* Oculta la imagen cuando el ancho de la ventana sea menor o igual a 768px */
   }
-  .image-rigth {
+  .image-right {
     display: none;
   }
 }

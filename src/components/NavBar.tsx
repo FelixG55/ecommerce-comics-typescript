@@ -1,15 +1,16 @@
+import { Link } from "react-router-dom";
 import logo from "../assets/front.png";
 import CartWidget from "./CartWidget";
-import "./navBar.css";
+import "../assets/css/navBar.css";
 
 function NavBar() {
   return (
     <div className="container-fluid p-0 position-relative">
       <nav className="navbar navbar-expand-lg bg-danger">
         <div className="container-fluid">
-          <a className="navbar-brand" href="">
+          <Link to={'/'} className="navbar-brand" >
             <img src={logo} alt="" width={100} />
-          </a>
+          </Link>
           <button
             className="navbar-toggler m-auto"
             type="button"
@@ -30,7 +31,7 @@ function NavBar() {
             id="navbarSupportedContent"
           >
             <div
-            className="image-rigth"
+            className="image-right"
             style={{
               backgroundImage: "url('logo2.svg')",
               backgroundSize: "100px 100px", // Ancho de la imagen y auto para el alto
@@ -43,9 +44,9 @@ function NavBar() {
             <div className="image-bg">
               <ul className="navbar-nav mb-lg-0 mt-lg-4 ms-lg-5">
                 <li className="nav-item ms-lg-4">
-                  <a className="nav-link active" aria-current="page" href="#">
+                  <Link to={'/'} className="nav-link active" aria-current="page">
                     Home
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="#">
@@ -67,14 +68,14 @@ function NavBar() {
                     style={{ backgroundColor: "#FFCC0C" }}
                   >
                     <li>
-                      <a className="dropdown-item" href="#">
+                      <Link to={'/category/Comics'} className="dropdown-item" >
                         Comics
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a className="dropdown-item" href="#">
+                      <Link to={'/category/Merchandaising'} className="dropdown-item" >
                         Merchandaising
-                      </a>
+                      </Link>
                     </li>
                     <li>
                       <hr className="dropdown-divider" />
@@ -89,7 +90,7 @@ function NavBar() {
               </ul>
             </div>
           <div
-            className="image-rigth ms-5 "
+            className="image-right ms-5 "
             style={{
               backgroundImage: "url('logo.svg')",
               backgroundSize: "100px 100px", // Ancho de la imagen y auto para el alto
