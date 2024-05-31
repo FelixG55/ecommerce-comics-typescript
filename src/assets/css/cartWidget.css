@@ -1,0 +1,6 @@
+.cart-widget-bg:hover{
+    background-color: #ffc107;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    
+}
