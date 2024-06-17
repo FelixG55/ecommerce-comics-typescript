@@ -16,7 +16,7 @@ const ResumeCart: React.FC<Props> = ({cart, styleProps,hidden}) => {
                 <ul className="list-group list-group-flush">
                   <li className="list-group-item" style={{background:'#fffdc1'}}  >Resumen compra</li>
                   <li className="list-group-item" style={{background:'#fffdc1',height:'100%'}}>
-                        <div className="row mb-1">
+                        <div className="col mb-1 ms-3 fw-bold">
                           Productos
                         </div>
                       {cart.map((product)=>{
@@ -38,10 +38,10 @@ const ResumeCart: React.FC<Props> = ({cart, styleProps,hidden}) => {
                         }
                       })}
                       <div className="row mt-3">
-                        <div className="col-3 text-start fw-bold">
+                        <div className="col-6 text-start fw-bold">
                           Total
                         </div>
-                        <div className="col-8 text-end ms-3 fw-bold">
+                        <div className="col-6 text-end fw-bold">
                           $ {Intl.NumberFormat().format(cart.reduce((acc, product)=> acc + product.price * product.quantity, 0))}
                         </div>
                         <Link to={'/checkout'}>

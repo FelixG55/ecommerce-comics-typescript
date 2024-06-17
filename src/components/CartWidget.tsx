@@ -12,8 +12,8 @@ function CartWidget() {
   const { getCountProducts } = context;
 
   return (
-    <div className="position-absolute end-0 top-0 me-2 mt-2 cart-widget-bg rounded-3">
-      <Link to="/cart" className="link-dark ">
+    <Link to="/cart" className="link-dark ">
+      <div className="position-absolute end-0 top-0 me-2 mt-2 cart-widget-bg rounded-3">
         <div className="position-relative">
           <div className="m-3 position-relative ">
             <svg
@@ -35,8 +35,8 @@ function CartWidget() {
             </span>
           </div>
         </div>
-      </Link>
-    </div>
+      </div>
+    </Link>
   );
 }
 

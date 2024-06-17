@@ -10,24 +10,24 @@ interface Props {
 const ItemDetailContainer: React.FC<Props> = ({ products }) => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const [oneProduct, setOneProduct] = useState<Product | undefined>();
+  const [oneProduct, setOneProduct] = useState<Product|null>(null);
 
   useEffect(() => {
     if (id) {
       const filterProduct = products.find(
         (product) => product.id.toString() === id
-      );
+      ) as Product;
       if (filterProduct) {
         setOneProduct(filterProduct);
       }else{
         navigate("/not-found");
       }
     }
-  }, [id, products]);
+  }, [id, products,navigate]);
   return (
     <div className="container-fluid">
       <div className="row justify-content-center bg-warning ">
-        <ItemDetail product={oneProduct} />
+      {oneProduct ? <ItemDetail product={oneProduct} /> : <p>Loading...</p>}
       </div>
     </div>
   );

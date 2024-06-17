@@ -13,31 +13,10 @@ function Cart() {
   }
   const { cart } = context;
 
-  // const cart = [
-  //   {
-  //     id: 1,
-  //     name: 'Producto 1',
-  //     price: 100,
-  //     category: 'Electronics',
-  //     quantity: 1
-  //   },
-  //   {
-  //     id: 2,
-  //     name: 'Producto 2',
-  //     price: 200,
-  //     quantity: 2
-  //   },
-  //   {
-  //     id: 3,
-  //     name: 'Producto 3',
-  //     price: 300,
-  //     quantity: 3
-  //   }
-  // ]
   
   return (
     <>
-        <div className="container-fluid bg-warning pt-3" style={{height:500}}>
+        <div className="container-fluid bg-warning pt-3" style={{height:'auto'}}>
           <div className="row 1 m-5 ">
             <div className="col-8 ">
               {cart.length > 0 ?cart.map((product,pIndex)=>{
@@ -49,7 +28,6 @@ function Cart() {
               <ResumeCart cart={cart} styleProps={{width:'25rem'}} hidden={true}/>
           </div>
         </div>
-        {/* <Footer/> */}
     </>
   )
 }

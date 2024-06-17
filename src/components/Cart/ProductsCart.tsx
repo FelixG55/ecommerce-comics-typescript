@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { CartProduct } from "../../types";
 import { CartContext } from "../../Context/CartContext";
+import { Link } from "react-router-dom";
 
 function ProductsCart(product: CartProduct) {
   const context = useContext(CartContext);
@@ -19,40 +20,38 @@ function ProductsCart(product: CartProduct) {
           </li>
           <li className="list-group-item " style={{ background: "#fffdc1" }}>
             <div className="row">
-              <div className="col">
-                <a href="" className="link ">
+              <div className="col-3">
+                <Link to={`/item/${product.id}`} className="link ">
                   <img
                     className="img-fluid"
                     style={{ width: 100 }}
                     src={product.image}
                     alt=""
                   />
-                </a>
+                </Link>
               </div>
-              <div className="col">
-                <a className="nav-link" href="">
+              <div className="col-3 ">
                   <h6
-                    className="row text-truncate"
+                    className="text-truncate text-center"
                     style={{ maxWidth: "250px" }}
                   >
                     {product.name}
                   </h6>
-                </a>
-                <div className="row ">
+                <div className="row">
                   <a
-                    className="col nav-link text-warning d-flex"
+                    className="col text-warning m-2"
                     href=""
                     onClick={() => removeItem(product.id)}
                   >
                     Eliminar
                   </a>
-                  <a href="" className="col nav-link text-warning d-flex">
+                  <a href="" className="col text-warning m-2">
                     Comprar
                   </a>
                 </div>
               </div>
               <div
-                className="col btn-group mt-2"
+                className="col-3 btn-group mt-2"
                 style={{ height: "100%" }}
                 role="group"
                 aria-label="counter"
@@ -86,7 +85,7 @@ function ProductsCart(product: CartProduct) {
                   +
                 </button>
               </div>
-              <div className="col mt-3">
+              <div className="col mt-3 text-center">
                 <h6>$ {Intl.NumberFormat().format(product.price)}</h6>
               </div>
             </div>

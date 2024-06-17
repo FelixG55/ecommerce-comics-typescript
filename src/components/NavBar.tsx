@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import logo from "../assets/front.png";
+import logo2 from "../assets/logo2.svg";
+import logo3 from "../assets/logo.svg";
 import CartWidget from "./CartWidget";
 import "../assets/css/navBar.css";
 import { useCategories } from "../hooks/useCategories";
@@ -35,7 +37,7 @@ const NavBar: React.FC = () => {
             <div
               className="image-right"
               style={{
-                backgroundImage: "url('logo2.svg')",
+                backgroundImage: `url(${logo2})`,
                 backgroundSize: "100px 100px", // Ancho de la imagen y auto para el alto
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: "center",
@@ -55,9 +57,14 @@ const NavBar: React.FC = () => {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
-                    Eventos
-                  </a>
+                  <Link to={"/register"} className="nav-link">
+                    Register
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link to={"/login"} className="nav-link">
+                    Login
+                  </Link>
                 </li>
                 <li className="nav-item dropdown">
                   <a
@@ -101,7 +108,7 @@ const NavBar: React.FC = () => {
             <div
               className="image-right ms-5 "
               style={{
-                backgroundImage: "url('logo.svg')",
+                backgroundImage: `url(${logo3})`,
                 backgroundSize: "100px 100px", // Ancho de la imagen y auto para el alto
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: "left",

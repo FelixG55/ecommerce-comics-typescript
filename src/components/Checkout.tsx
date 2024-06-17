@@ -49,7 +49,7 @@ const Checkout = () => {
               <label className="form-label">Nombre</label>
               <input
                 type="text"
-                className="form-control w-50 m-auto"
+                className="form-control w-50 m-auto bg-danger"
                 id="exampleInputEmail1"
                 onInput={(e) => {setName(e.currentTarget.value)}}
               />
@@ -59,7 +59,7 @@ const Checkout = () => {
               <label className="form-label">Apellido</label>
               <input
                 type="text"
-                className="form-control w-50 m-auto"
+                className="form-control w-50 m-auto bg-danger"
                 id="exampleInputEmail1"
                 onInput={(e) => {setLastName(e.currentTarget.value)}}
               />
@@ -69,7 +69,7 @@ const Checkout = () => {
               <label className="form-label">Telefono</label>
               <input
                 type="text"
-                className="form-control w-50 m-auto"
+                className="form-control w-50 m-auto bg-danger"
                 id="exampleInputEmail1"
                 onInput={(e) => {setTelephone(e.currentTarget.value)}}
               />
@@ -79,7 +79,7 @@ const Checkout = () => {
               <label className="form-label">Email</label>
               <input
                 type="email"
-                className="form-control w-50 m-auto"
+                className="form-control w-50 m-auto bg-danger"
                 id="exampleInputPassword1"
                 onInput={(e) => {setEmail(e.currentTarget.value)}}
               />

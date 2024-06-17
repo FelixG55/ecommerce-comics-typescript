@@ -100,7 +100,6 @@ const ItemDetail: React.FC<Props> = ({ product }) => {
                   <Link to={"/cart"}>
                     <button
                       className=" btn btn-warning mb-2"
-                      onClick={() => addOnCart(count)}
                     >
                       {" "}
                       Finaliza tu compra !!{" "}
