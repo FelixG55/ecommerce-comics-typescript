@@ -6,9 +6,9 @@ import { auth } from "../main";
 const registerUser = async (email:string, password:string) => {
   try {
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-    console.log('Usuario registrado:', userCredential.user);
-  } catch (error) {
-    console.error('Error en el registro:', error);
+    return { user: userCredential.user, error: null };
+  } catch (error:any) {
+    return { user: null, error: error.message }; 
   }
 };
 
@@ -16,9 +16,9 @@ const registerUser = async (email:string, password:string) => {
 const loginUser = async (email:string, password:string) => {
   try {
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
-    console.log('Usuario autenticado:', userCredential.user);
+    return { user: userCredential.user, error: null };
   } catch (error) {
-    console.error('Error en el inicio de sesión:', error);
+    return { user: null, error: 'Error en el inicio de sesión' };
   }
 };
 

@@ -25,6 +25,11 @@ export interface CartProduct extends Product {
   quantity: number;
 }
 
+export interface FormValues {
+  email: string;
+  password: string;
+}
+
 export interface Category {
   id: string;
   key: string;
