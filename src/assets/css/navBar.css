@@ -1,7 +1,7 @@
  .image-bg {
   height: 110px;
-  width: 390px;
-  background-image: url("headerBanner.svg");
+  width: 420px;
+  background-image: url("../headerBanner.svg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

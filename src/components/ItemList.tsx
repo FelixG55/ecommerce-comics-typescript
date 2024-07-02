@@ -2,14 +2,14 @@ import Item from "./Item";
 import { type ProductList } from "../types";
 
 interface Props {
-  listProducts: ProductList;
+  listProducts: ProductList | undefined;
 }
 
 const ItemList: React.FC<Props> = ({ listProducts }) => {
   return (
-    <div className="row justify-content-center bg-warning ">
-      {listProducts.map((product) => {
-        return <Item product={product} key={`detail${product.id}`}/>;
+    <div className="row justify-content-center mt-4">
+      {listProducts?.map((product) => {
+        return <Item product={product} key={`$itemList${product.id}`}/>;
       })}
     </div>
   );

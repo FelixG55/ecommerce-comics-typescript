@@ -1,29 +1,22 @@
-import { useEffect, useState } from "react";
+
 import "../assets/css/ItemListContainer.css";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
-import { type ProductList } from "../types";
+import useFilterProducts from "../hooks/useFilterProducts";
 
-interface Props {
-  products: ProductList;
-}
 
-const ItemListContainer: React.FC<Props> = ({ products }) => {
+const ItemListContainer: React.FC = () => {
+
   const { categoryId } = useParams();
-  const [listProducts, setListProducts] = useState(products);
+  const {products} = useFilterProducts(categoryId)
+  
 
-  useEffect(() => {
-    const filterProducts = categoryId
-      ? products.filter((product) => product.category === categoryId)
-      : products;
-    setListProducts(filterProducts);
-  }, [categoryId, products]);
 
   return (
     <div className="container-fluid bg-warning">
-      <div className="row justify-content-between ">
+      <div className="row justify-content-between pt-2">
         <h6 className="text-danger fs-1 text-center">{categoryId}</h6>
-        <ItemList listProducts={listProducts} />
+        <ItemList listProducts={products} />
       </div>
     </div>
   );

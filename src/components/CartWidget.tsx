@@ -1,13 +1,25 @@
-
+import { Link } from "react-router-dom";
+import "../assets/css/cartWidget.css";
+import { useContext } from "react";
+import { CartContext } from "../Context/CartContext";
 
 function CartWidget() {
+  const context = useContext(CartContext);
+
+  if (!context) {
+    throw new Error("CartContext must be used within a CartContextProvider");
+  }
+  const { getCountProducts } = context;
+
   return (
-    <div className="position-absolute end-0 top-0 ">
+    <Link to="/cart" className="link-dark ">
+      <div className="position-absolute end-0 top-0 me-2 mt-2 cart-widget-bg rounded-3">
+        <div className="position-relative">
           <div className="m-3 position-relative ">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
+              width="30"
+              height="30"
               fill="currentColor"
               className="bi bi-basket"
               viewBox="0 0 16 16"
@@ -18,11 +30,14 @@ function CartWidget() {
               className="position-absolute top-10 start-100 translate-middle badge rounded-pill bg-dark"
               style={{ fontSize: 8 }}
             >
-              1<span className="visually-hidden">unread messages</span>
+              {getCountProducts()}
+              <span className="visually-hidden">unread messages</span>
             </span>
           </div>
         </div>
-  )
+      </div>
+    </Link>
+  );
 }
 
-export default CartWidget
+export default CartWidget;
